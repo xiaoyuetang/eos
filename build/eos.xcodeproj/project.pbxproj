@@ -1,0 +1,1876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1EB9A3BBC25B4781A0EE6B86 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 72319AF2AC6D4F89A609663D /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				596BA5C54076497F8BB76618 /* CMake Rules */,
+			);
+			dependencies = (
+				5EB029F0EE044E08A5FCF817 /* PBXTargetDependency */,
+				8966EC3C615F4C5A914958BC /* PBXTargetDependency */,
+				E3105471DC564DC29747A15C /* PBXTargetDependency */,
+				BF13B575A6394353A1956518 /* PBXTargetDependency */,
+				92B1E56FC4074353A0B805FD /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DA52954874624A8A9295651C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				392962F1F44C4232800B6DA8 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		8FAE62EF76DD401CBF83D749 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B95064A6E48D49B8B1B18323 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				C14E8885D79A454180F44C69 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				265662D84A4A4BEB8D0AABD4 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		AE3FDDA764B7401CB765D03A /* package */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B06F639469EE48FA81FEEB36 /* Build configuration list for PBXAggregateTarget "package" */;
+			buildPhases = (
+				9B78A0A0088D497EB5C7844D /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				16877195AA7641B89FA149DC /* PBXTargetDependency */,
+			);
+			name = package;
+			productName = package;
+		};
+		DD06382C5CC94D0B8B05C920 /* eos-headers */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 36E451F2826C4EA39462517E /* Build configuration list for PBXAggregateTarget "eos-headers" */;
+			buildPhases = (
+			);
+			dependencies = (
+				B3E7E7A32E764BF193B3EEB0 /* PBXTargetDependency */,
+			);
+			name = "eos-headers";
+			productName = "eos-headers";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		17DBEF6C02C84774A2456619 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-simple.cpp */ = {isa = PBXBuildFile; fileRef = 97ED066D5DF44F798963BA54 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-simple.cpp */; };
+		38F5FCC72B8F4BC9ACD11C11 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model.cpp */ = {isa = PBXBuildFile; fileRef = 9A18ADDB92B2450C87C24A3C /* /Users/keelia/Documents/GitHub/eos/examples/fit-model.cpp */; };
+		6499F949241640219F39EC8B /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-multi.cpp */ = {isa = PBXBuildFile; fileRef = AC3E243C608C4A54ADA83648 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-multi.cpp */; };
+		79A910B19A4A41FAB19DC4D3 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 61FFEA184F3C45BDA8E78C73 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */; };
+		97FC2B18B2E74E1095774602 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 73B3CC7CE0514B59BABD4845 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */; };
+		AAE6D5D480B449D896314BBC /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 194E1054BF234C9B8E07E3F8 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */; };
+		EF03670EF8CA4BE89C8597CE /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = E0D055EBD6B34549BBD65086 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */; };
+		F234F8A2A09443D19D6C4B8E /* /Users/keelia/Documents/GitHub/eos/examples/generate-obj.cpp */ = {isa = PBXBuildFile; fileRef = 4A62F175BB3F4E3B917E1924 /* /Users/keelia/Documents/GitHub/eos/examples/generate-obj.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		074B3732E865475AB44B95F1 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		4DEEFDF6F4E84DC282310FB0 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		639C8697103244258182F48F /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		F669C9AC61C54A65AF6E044D /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		3DB3E5379C0F46CD878D0E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D94589A331847809C502B86;
+			remoteInfo = "generate-obj";
+		};
+		464516BD115C4446B4290FA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBE2EBF0C5D4E3F9D6DF4CA;
+			remoteInfo = ZERO_CHECK;
+		};
+		4FBB608567F548FFAF48636E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBE2EBF0C5D4E3F9D6DF4CA;
+			remoteInfo = ZERO_CHECK;
+		};
+		66CD4953A9124979A8CC408A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E096D1268804F5E89648DE2;
+			remoteInfo = "fit-model-multi";
+		};
+		857B96DA6D314C0ABDD2D920 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBE2EBF0C5D4E3F9D6DF4CA;
+			remoteInfo = ZERO_CHECK;
+		};
+		8FCBEA5E03CB4788AA60E422 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBE2EBF0C5D4E3F9D6DF4CA;
+			remoteInfo = ZERO_CHECK;
+		};
+		9FDB9500D325498ABBD197AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EB9A3BBC25B4781A0EE6B86;
+			remoteInfo = ALL_BUILD;
+		};
+		B60AA1AA202B4CE99C7115D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBE2EBF0C5D4E3F9D6DF4CA;
+			remoteInfo = ZERO_CHECK;
+		};
+		C592F2345AB343128D89F311 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A80A2B7FBCA446FD953D5199;
+			remoteInfo = "fit-model";
+		};
+		C809253DBD754AC08CE25244 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 739C5DCB57EA42919F024EA0;
+			remoteInfo = "fit-model-simple";
+		};
+		CA181092C3A941BB819AF520 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBE2EBF0C5D4E3F9D6DF4CA;
+			remoteInfo = ZERO_CHECK;
+		};
+		DFC70F4582DE4693A4CE9725 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EB9A3BBC25B4781A0EE6B86;
+			remoteInfo = ALL_BUILD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AB1EF303E9D4508AC1D9AB3 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/linear_shape_fitting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = linear_shape_fitting.hpp; path = include/eos/fitting/linear_shape_fitting.hpp; sourceTree = SOURCE_ROOT; };
+		0F48F2DA43E14A27974F1B7A /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/Pixel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Pixel.hpp; path = include/eos/core/image/Pixel.hpp; sourceTree = SOURCE_ROOT; };
+		0F6D22C390264FBCA29015F2 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/detail/nonlinear_camera_estimation_detail.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = nonlinear_camera_estimation_detail.hpp; path = include/eos/fitting/detail/nonlinear_camera_estimation_detail.hpp; sourceTree = SOURCE_ROOT; };
+		194E1054BF234C9B8E07E3F8 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = examples/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		1BCECFE7808646AE8A74DB1C /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/optional.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = optional.hpp; path = include/eos/cpp17/optional.hpp; sourceTree = SOURCE_ROOT; };
+		1E295D47A86B4E38B65960F2 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/read_pts_landmarks.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = read_pts_landmarks.hpp; path = include/eos/core/read_pts_landmarks.hpp; sourceTree = SOURCE_ROOT; };
+		2028581598D94589ACDEA294 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/ceres_nonlinear.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ceres_nonlinear.hpp; path = include/eos/fitting/ceres_nonlinear.hpp; sourceTree = SOURCE_ROOT; };
+		226CDD6B1ED145DB92B3D6B7 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/orthographic_camera_estimation_linear.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = orthographic_camera_estimation_linear.hpp; path = include/eos/fitting/orthographic_camera_estimation_linear.hpp; sourceTree = SOURCE_ROOT; };
+		2C8DB23821394CBA92F20221 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/blendshape_fitting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = blendshape_fitting.hpp; path = include/eos/fitting/blendshape_fitting.hpp; sourceTree = SOURCE_ROOT; };
+		2CC1E03608DE41A493A3A256 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/render.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = render.hpp; path = include/eos/render/render.hpp; sourceTree = SOURCE_ROOT; };
+		2E963047E4454CCE9F93F187 /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/MorphableModel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MorphableModel.hpp; path = include/eos/morphablemodel/MorphableModel.hpp; sourceTree = SOURCE_ROOT; };
+		32BE0D2AA23B48C2BFBDC88E /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/akrzemi1_optional.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = akrzemi1_optional.hpp; path = include/eos/cpp17/detail/akrzemi1_optional.hpp; sourceTree = SOURCE_ROOT; };
+		37A81B49A5EF44A9A053CEF2 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/SoftwareRenderer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SoftwareRenderer.hpp; path = include/eos/render/SoftwareRenderer.hpp; sourceTree = SOURCE_ROOT; };
+		39404A709BA94C58825E2499 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/resize.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = resize.hpp; path = include/eos/core/image/resize.hpp; sourceTree = SOURCE_ROOT; };
+		3D596507D70B4066AD5C6DED /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/io/cvssp.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = cvssp.hpp; path = include/eos/morphablemodel/io/cvssp.hpp; sourceTree = SOURCE_ROOT; };
+		3E6DF9A0EB024F70A7E4C417 /* /Users/keelia/Documents/GitHub/eos/include/eos/video/keyframe_merging.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = keyframe_merging.hpp; path = include/eos/video/keyframe_merging.hpp; sourceTree = SOURCE_ROOT; };
+		3F4CEAF0D7E14FB29ED0E588 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Landmark.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Landmark.hpp; path = include/eos/core/Landmark.hpp; sourceTree = SOURCE_ROOT; };
+		45935E0859174D6B9CDBEBB2 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/optional_serialization.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = optional_serialization.hpp; path = include/eos/cpp17/optional_serialization.hpp; sourceTree = SOURCE_ROOT; };
+		4A62F175BB3F4E3B917E1924 /* /Users/keelia/Documents/GitHub/eos/examples/generate-obj.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "generate-obj.cpp"; path = "examples/generate-obj.cpp"; sourceTree = SOURCE_ROOT; };
+		4A80753297674E13A4235974 /* fit-model-simple */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "fit-model-simple"; sourceTree = BUILT_PRODUCTS_DIR; };
+		522CF91B73AB42BD93AD150B /* /Users/keelia/Documents/GitHub/eos/include/eos/core/LandmarkMapper.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = LandmarkMapper.hpp; path = include/eos/core/LandmarkMapper.hpp; sourceTree = SOURCE_ROOT; };
+		5390489E7D5346FD8ABB90E0 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/read_obj.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = read_obj.hpp; path = include/eos/core/read_obj.hpp; sourceTree = SOURCE_ROOT; };
+		53938C493A66473291858699 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Rect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Rect.hpp; path = include/eos/core/Rect.hpp; sourceTree = SOURCE_ROOT; };
+		54EC2AB5F4F74AABADEA9FFE /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/io/eigen_cerealisation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = eigen_cerealisation.hpp; path = include/eos/morphablemodel/io/eigen_cerealisation.hpp; sourceTree = SOURCE_ROOT; };
+		58B49D5F69834DA5AFEB1D5C /* /Users/keelia/Documents/GitHub/eos/include/eos/render/normals.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = normals.hpp; path = include/eos/render/normals.hpp; sourceTree = SOURCE_ROOT; };
+		613FE5A3E24C456EBD68E6AB /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/detail/glm_cerealisation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = glm_cerealisation.hpp; path = include/eos/fitting/detail/glm_cerealisation.hpp; sourceTree = SOURCE_ROOT; };
+		61FFEA184F3C45BDA8E78C73 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = examples/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		68966D740E1245EB83158D9C /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/Vertex.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Vertex.hpp; path = include/eos/render/detail/Vertex.hpp; sourceTree = SOURCE_ROOT; };
+		69632C9351DE4737967E2B3B /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/Blendshape.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Blendshape.hpp; path = include/eos/morphablemodel/Blendshape.hpp; sourceTree = SOURCE_ROOT; };
+		6B804CA9D8CD4BA38C0FB33E /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/fitting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = fitting.hpp; path = include/eos/fitting/fitting.hpp; sourceTree = SOURCE_ROOT; };
+		6DE404A8677B40A98A696B15 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/render_detail_utils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = render_detail_utils.hpp; path = include/eos/render/detail/render_detail_utils.hpp; sourceTree = SOURCE_ROOT; };
+		6F9AB2B101694971ABA4C453 /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/coefficients.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = coefficients.hpp; path = include/eos/morphablemodel/coefficients.hpp; sourceTree = SOURCE_ROOT; };
+		73B3CC7CE0514B59BABD4845 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = examples/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		7423196CB5E34A8787FB75B1 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/PixelTraits.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PixelTraits.hpp; path = include/eos/core/image/PixelTraits.hpp; sourceTree = SOURCE_ROOT; };
+		7B3F57DEEB2248438962E56C /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/variant_serialization.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = variant_serialization.hpp; path = include/eos/cpp17/variant_serialization.hpp; sourceTree = SOURCE_ROOT; };
+		7D166C5CBE92422D847A8E15 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/multi_image_fitting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = multi_image_fitting.hpp; path = include/eos/fitting/multi_image_fitting.hpp; sourceTree = SOURCE_ROOT; };
+		835ED4AA6D024148AC741782 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/texture_extraction.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = texture_extraction.hpp; path = include/eos/render/texture_extraction.hpp; sourceTree = SOURCE_ROOT; };
+		91AD5A8A2AE743B9BA85FE71 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/Texture.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Texture.hpp; path = include/eos/render/Texture.hpp; sourceTree = SOURCE_ROOT; };
+		9365EB0F4091425A9B070203 /* /Users/keelia/Documents/GitHub/eos/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		93C9CB9E31E34815B704DB78 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/utils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = utils.hpp; path = include/eos/core/image/utils.hpp; sourceTree = SOURCE_ROOT; };
+		93D75475C23D4C1187AD3271 /* /Users/keelia/Documents/GitHub/eos/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9580F92478C541A491A6FDAA /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/ExpressionModel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ExpressionModel.hpp; path = include/eos/morphablemodel/ExpressionModel.hpp; sourceTree = SOURCE_ROOT; };
+		962F6C6BF11A426AB487979B /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/variant.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = variant.hpp; path = include/eos/cpp17/variant.hpp; sourceTree = SOURCE_ROOT; };
+		97ED066D5DF44F798963BA54 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-simple.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "fit-model-simple.cpp"; path = "examples/fit-model-simple.cpp"; sourceTree = SOURCE_ROOT; };
+		9A18ADDB92B2450C87C24A3C /* /Users/keelia/Documents/GitHub/eos/examples/fit-model.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "fit-model.cpp"; path = "examples/fit-model.cpp"; sourceTree = SOURCE_ROOT; };
+		9A58A4E58CE1441AB000B163 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Mesh.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Mesh.hpp; path = include/eos/core/Mesh.hpp; sourceTree = SOURCE_ROOT; };
+		9BD283D7C595468DB4CBCD96 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/affine_camera_estimation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = affine_camera_estimation.hpp; path = include/eos/fitting/affine_camera_estimation.hpp; sourceTree = SOURCE_ROOT; };
+		9F951001683F4C8E9907BD63 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/RenderingParameters.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RenderingParameters.hpp; path = include/eos/fitting/RenderingParameters.hpp; sourceTree = SOURCE_ROOT; };
+		A0794A0870454D46B81EDAB1 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/write_obj.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = write_obj.hpp; path = include/eos/core/write_obj.hpp; sourceTree = SOURCE_ROOT; };
+		A35D568820E8407BA7B9CE01 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/plane.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = plane.hpp; path = include/eos/render/detail/plane.hpp; sourceTree = SOURCE_ROOT; };
+		A3801A471B82408990E2DF6D /* /Users/keelia/Documents/GitHub/eos/include/eos/pca/pca.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = pca.hpp; path = include/eos/pca/pca.hpp; sourceTree = SOURCE_ROOT; };
+		A99C7C185BEA44E3A5FDEED5 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/transforms.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = transforms.hpp; path = include/eos/render/transforms.hpp; sourceTree = SOURCE_ROOT; };
+		A9B4E446346E4361B0F516EC /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/mpark_variant.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mpark_variant.hpp; path = include/eos/cpp17/detail/mpark_variant.hpp; sourceTree = SOURCE_ROOT; };
+		AA5FE8BEBE6848D5B6098356 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/render_detail.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = render_detail.hpp; path = include/eos/render/detail/render_detail.hpp; sourceTree = SOURCE_ROOT; };
+		AC245F55BCCB4F46B6E4376C /* /Users/keelia/Documents/GitHub/eos/include/eos/render/draw_utils.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = draw_utils.hpp; path = include/eos/render/draw_utils.hpp; sourceTree = SOURCE_ROOT; };
+		AC3E243C608C4A54ADA83648 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-multi.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "fit-model-multi.cpp"; path = "examples/fit-model-multi.cpp"; sourceTree = SOURCE_ROOT; };
+		AF1A085D49B94EFAB67B5D59 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/closest_edge_fitting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = closest_edge_fitting.hpp; path = include/eos/fitting/closest_edge_fitting.hpp; sourceTree = SOURCE_ROOT; };
+		B30A2A26D7004D978CC2454E /* /Users/keelia/Documents/GitHub/eos/include/eos/video/Keyframe.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Keyframe.hpp; path = include/eos/video/Keyframe.hpp; sourceTree = SOURCE_ROOT; };
+		B515CD1B97EC4A569F48346E /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/texturing.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = texturing.hpp; path = include/eos/render/detail/texturing.hpp; sourceTree = SOURCE_ROOT; };
+		B5357C16070143C881EA879B /* fit-model-multi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "fit-model-multi"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B83DE994934281902AC93C /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/PcaModel.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PcaModel.hpp; path = include/eos/morphablemodel/PcaModel.hpp; sourceTree = SOURCE_ROOT; };
+		B704AB6F51F94118B7A578B4 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/FragmentShader.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FragmentShader.hpp; path = include/eos/render/FragmentShader.hpp; sourceTree = SOURCE_ROOT; };
+		BB9311B8668C48B5A25F9D54 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/contour_correspondence.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = contour_correspondence.hpp; path = include/eos/fitting/contour_correspondence.hpp; sourceTree = SOURCE_ROOT; };
+		BCD38EA222D44A569CB03384 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/TriangleToRasterize.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = TriangleToRasterize.hpp; path = include/eos/render/detail/TriangleToRasterize.hpp; sourceTree = SOURCE_ROOT; };
+		C3CE47B1C1754FDD9D7F45B8 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/texture_extraction_detail.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = texture_extraction_detail.hpp; path = include/eos/render/detail/texture_extraction_detail.hpp; sourceTree = SOURCE_ROOT; };
+		CCE510E620304A1DA95CB836 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Image.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Image.hpp; path = include/eos/core/Image.hpp; sourceTree = SOURCE_ROOT; };
+		D17CB8A08E494CC88E60279B /* fit-model */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "fit-model"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4BEF6933D7C418CA1FCEFEF /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/opencv_interop.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = opencv_interop.hpp; path = include/eos/core/image/opencv_interop.hpp; sourceTree = SOURCE_ROOT; };
+		DDA13DACC61B4BFFAD4F9CC4 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/VertexShader.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = VertexShader.hpp; path = include/eos/render/VertexShader.hpp; sourceTree = SOURCE_ROOT; };
+		E0BB2D07D857463FBF46A148 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/Rasterizer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Rasterizer.hpp; path = include/eos/render/Rasterizer.hpp; sourceTree = SOURCE_ROOT; };
+		E0D055EBD6B34549BBD65086 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = examples/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E177BEE48C25426DB728E008 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/render_affine_detail.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = render_affine_detail.hpp; path = include/eos/render/detail/render_affine_detail.hpp; sourceTree = SOURCE_ROOT; };
+		E32FF98C8C5F4B3584791A63 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/render_affine.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = render_affine.hpp; path = include/eos/render/render_affine.hpp; sourceTree = SOURCE_ROOT; };
+		EC0A43E854524962B58D0DF1 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/FittingResult.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FittingResult.hpp; path = include/eos/fitting/FittingResult.hpp; sourceTree = SOURCE_ROOT; };
+		EE0F852273E54060A2E79668 /* generate-obj */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "generate-obj"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B95BC29E6F4108B65FE2B4 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/ray_triangle_intersect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ray_triangle_intersect.hpp; path = include/eos/render/ray_triangle_intersect.hpp; sourceTree = SOURCE_ROOT; };
+		F37B0DB3FD284A6A996F09D3 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/mpark_variant_serialization.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = mpark_variant_serialization.hpp; path = include/eos/cpp17/detail/mpark_variant_serialization.hpp; sourceTree = SOURCE_ROOT; };
+		FAA37C234E1444DEA4BF813F /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/nonlinear_camera_estimation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = nonlinear_camera_estimation.hpp; path = include/eos/fitting/nonlinear_camera_estimation.hpp; sourceTree = SOURCE_ROOT; };
+		FB19A65D75D84117A0DCA973 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/akrzemi1_optional_serialization.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = akrzemi1_optional_serialization.hpp; path = include/eos/cpp17/detail/akrzemi1_optional_serialization.hpp; sourceTree = SOURCE_ROOT; };
+		FC96CA578C524ECCA2353505 /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/EdgeTopology.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EdgeTopology.hpp; path = include/eos/morphablemodel/EdgeTopology.hpp; sourceTree = SOURCE_ROOT; };
+		FDD4B1E8B5D144C38309A5A1 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/clamp.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = clamp.hpp; path = include/eos/cpp17/clamp.hpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		01DCD1BC78164CC88276AC39 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				0F48F2DA43E14A27974F1B7A /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/Pixel.hpp */,
+				7423196CB5E34A8787FB75B1 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/PixelTraits.hpp */,
+				93C9CB9E31E34815B704DB78 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/utils.hpp */,
+				39404A709BA94C58825E2499 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/resize.hpp */,
+				D4BEF6933D7C418CA1FCEFEF /* /Users/keelia/Documents/GitHub/eos/include/eos/core/image/opencv_interop.hpp */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		03724A06B26446A186EEA5DE /* fitting */ = {
+			isa = PBXGroup;
+			children = (
+				73E502DE2CF543BA82FE4EE0 /* detail */,
+				9BD283D7C595468DB4CBCD96 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/affine_camera_estimation.hpp */,
+				226CDD6B1ED145DB92B3D6B7 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/orthographic_camera_estimation_linear.hpp */,
+				FAA37C234E1444DEA4BF813F /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/nonlinear_camera_estimation.hpp */,
+				0AB1EF303E9D4508AC1D9AB3 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/linear_shape_fitting.hpp */,
+				BB9311B8668C48B5A25F9D54 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/contour_correspondence.hpp */,
+				2C8DB23821394CBA92F20221 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/blendshape_fitting.hpp */,
+				AF1A085D49B94EFAB67B5D59 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/closest_edge_fitting.hpp */,
+				6B804CA9D8CD4BA38C0FB33E /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/fitting.hpp */,
+				7D166C5CBE92422D847A8E15 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/multi_image_fitting.hpp */,
+				2028581598D94589ACDEA294 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/ceres_nonlinear.hpp */,
+				9F951001683F4C8E9907BD63 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/RenderingParameters.hpp */,
+				EC0A43E854524962B58D0DF1 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/FittingResult.hpp */,
+			);
+			name = fitting;
+			sourceTree = "<group>";
+		};
+		083026DDFF324A5C9D41A6D5 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				BCD38EA222D44A569CB03384 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/TriangleToRasterize.hpp */,
+				A35D568820E8407BA7B9CE01 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/plane.hpp */,
+				AA5FE8BEBE6848D5B6098356 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/render_detail.hpp */,
+				6DE404A8677B40A98A696B15 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/render_detail_utils.hpp */,
+				E177BEE48C25426DB728E008 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/render_affine_detail.hpp */,
+				C3CE47B1C1754FDD9D7F45B8 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/texture_extraction_detail.hpp */,
+				B515CD1B97EC4A569F48346E /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/texturing.hpp */,
+				68966D740E1245EB83158D9C /* /Users/keelia/Documents/GitHub/eos/include/eos/render/detail/Vertex.hpp */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
+		169337781E1945FA980A26C9 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				B30A2A26D7004D978CC2454E /* /Users/keelia/Documents/GitHub/eos/include/eos/video/Keyframe.hpp */,
+				3E6DF9A0EB024F70A7E4C417 /* /Users/keelia/Documents/GitHub/eos/include/eos/video/keyframe_merging.hpp */,
+			);
+			name = video;
+			sourceTree = "<group>";
+		};
+		1AA092C406BE42BC8608AD6A /* fit-model-multi */ = {
+			isa = PBXGroup;
+			children = (
+				2C66B1A68E5945C5ACA33E01 /* Source Files */,
+				194E1054BF234C9B8E07E3F8 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */,
+			);
+			name = "fit-model-multi";
+			sourceTree = "<group>";
+		};
+		22DA8DA760E146E3A2914AC4 /* fit-model */ = {
+			isa = PBXGroup;
+			children = (
+				5FCECD93926A46E9B7E01001 /* Source Files */,
+				61FFEA184F3C45BDA8E78C73 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */,
+			);
+			name = "fit-model";
+			sourceTree = "<group>";
+		};
+		2C66B1A68E5945C5ACA33E01 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC3E243C608C4A54ADA83648 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-multi.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		5D1502B2ED2C4D42830E5C1F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A62F175BB3F4E3B917E1924 /* /Users/keelia/Documents/GitHub/eos/examples/generate-obj.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		5FCECD93926A46E9B7E01001 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A18ADDB92B2450C87C24A3C /* /Users/keelia/Documents/GitHub/eos/examples/fit-model.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		60276DA2953C448ABF05DDF6 /* pca */ = {
+			isa = PBXGroup;
+			children = (
+				A3801A471B82408990E2DF6D /* /Users/keelia/Documents/GitHub/eos/include/eos/pca/pca.hpp */,
+			);
+			name = pca;
+			sourceTree = "<group>";
+		};
+		697C6AF2E16744E4B1F6E0F6 /* fit-model-simple */ = {
+			isa = PBXGroup;
+			children = (
+				828197C9B4774317AC424B26 /* Source Files */,
+				73B3CC7CE0514B59BABD4845 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */,
+			);
+			name = "fit-model-simple";
+			sourceTree = "<group>";
+		};
+		6F4D6DA677DE466F91D79270 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				3D596507D70B4066AD5C6DED /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/io/cvssp.hpp */,
+				54EC2AB5F4F74AABADEA9FFE /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/io/eigen_cerealisation.hpp */,
+			);
+			name = io;
+			sourceTree = "<group>";
+		};
+		73E502DE2CF543BA82FE4EE0 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				0F6D22C390264FBCA29015F2 /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/detail/nonlinear_camera_estimation_detail.hpp */,
+				613FE5A3E24C456EBD68E6AB /* /Users/keelia/Documents/GitHub/eos/include/eos/fitting/detail/glm_cerealisation.hpp */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
+		828197C9B4774317AC424B26 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				97ED066D5DF44F798963BA54 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-simple.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		8662ED9F93DF48168151A94A /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				32BE0D2AA23B48C2BFBDC88E /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/akrzemi1_optional.hpp */,
+				FB19A65D75D84117A0DCA973 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/akrzemi1_optional_serialization.hpp */,
+				A9B4E446346E4361B0F516EC /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/mpark_variant.hpp */,
+				F37B0DB3FD284A6A996F09D3 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/detail/mpark_variant_serialization.hpp */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
+		8EA5D27FE56442DCB812065A /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		AD238D9122C940A896E3919A /* generate-obj */ = {
+			isa = PBXGroup;
+			children = (
+				5D1502B2ED2C4D42830E5C1F /* Source Files */,
+				E0D055EBD6B34549BBD65086 /* /Users/keelia/Documents/GitHub/eos/examples/CMakeLists.txt */,
+			);
+			name = "generate-obj";
+			sourceTree = "<group>";
+		};
+		C3286F22907B4DCCA107DC45 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				01DCD1BC78164CC88276AC39 /* image */,
+				3F4CEAF0D7E14FB29ED0E588 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Landmark.hpp */,
+				522CF91B73AB42BD93AD150B /* /Users/keelia/Documents/GitHub/eos/include/eos/core/LandmarkMapper.hpp */,
+				1E295D47A86B4E38B65960F2 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/read_pts_landmarks.hpp */,
+				CCE510E620304A1DA95CB836 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Image.hpp */,
+				9A58A4E58CE1441AB000B163 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Mesh.hpp */,
+				5390489E7D5346FD8ABB90E0 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/read_obj.hpp */,
+				A0794A0870454D46B81EDAB1 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/write_obj.hpp */,
+				53938C493A66473291858699 /* /Users/keelia/Documents/GitHub/eos/include/eos/core/Rect.hpp */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		CB4CFEFA545547D3992500A0 = {
+			isa = PBXGroup;
+			children = (
+				D80858D5EF4C41B399957DA2 /* eos-headers */,
+				E7720728D6B24DE7BB819C98 /* ALL_BUILD */,
+				1AA092C406BE42BC8608AD6A /* fit-model-multi */,
+				AD238D9122C940A896E3919A /* generate-obj */,
+				22DA8DA760E146E3A2914AC4 /* fit-model */,
+				697C6AF2E16744E4B1F6E0F6 /* fit-model-simple */,
+				DAEB5FE0260449B3B39D21BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB654FDA48C94EA19EFA59B7 /* cpp17 */ = {
+			isa = PBXGroup;
+			children = (
+				8662ED9F93DF48168151A94A /* detail */,
+				1BCECFE7808646AE8A74DB1C /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/optional.hpp */,
+				45935E0859174D6B9CDBEBB2 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/optional_serialization.hpp */,
+				962F6C6BF11A426AB487979B /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/variant.hpp */,
+				7B3F57DEEB2248438962E56C /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/variant_serialization.hpp */,
+				FDD4B1E8B5D144C38309A5A1 /* /Users/keelia/Documents/GitHub/eos/include/eos/cpp17/clamp.hpp */,
+			);
+			name = cpp17;
+			sourceTree = "<group>";
+		};
+		D081F780772D4E07978EAFCA /* morphablemodel */ = {
+			isa = PBXGroup;
+			children = (
+				6F4D6DA677DE466F91D79270 /* io */,
+				B5B83DE994934281902AC93C /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/PcaModel.hpp */,
+				2E963047E4454CCE9F93F187 /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/MorphableModel.hpp */,
+				69632C9351DE4737967E2B3B /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/Blendshape.hpp */,
+				9580F92478C541A491A6FDAA /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/ExpressionModel.hpp */,
+				6F9AB2B101694971ABA4C453 /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/coefficients.hpp */,
+				FC96CA578C524ECCA2353505 /* /Users/keelia/Documents/GitHub/eos/include/eos/morphablemodel/EdgeTopology.hpp */,
+			);
+			name = morphablemodel;
+			sourceTree = "<group>";
+		};
+		D80858D5EF4C41B399957DA2 /* eos-headers */ = {
+			isa = PBXGroup;
+			children = (
+				C3286F22907B4DCCA107DC45 /* core */,
+				D081F780772D4E07978EAFCA /* morphablemodel */,
+				60276DA2953C448ABF05DDF6 /* pca */,
+				03724A06B26446A186EEA5DE /* fitting */,
+				E8E1432E19E843DF932ACC46 /* render */,
+				169337781E1945FA980A26C9 /* video */,
+				CB654FDA48C94EA19EFA59B7 /* cpp17 */,
+				9365EB0F4091425A9B070203 /* /Users/keelia/Documents/GitHub/eos/CMakeLists.txt */,
+			);
+			name = "eos-headers";
+			sourceTree = "<group>";
+		};
+		DAEB5FE0260449B3B39D21BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D17CB8A08E494CC88E60279B /* fit-model */,
+				B5357C16070143C881EA879B /* fit-model-multi */,
+				4A80753297674E13A4235974 /* fit-model-simple */,
+				EE0F852273E54060A2E79668 /* generate-obj */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7720728D6B24DE7BB819C98 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				8EA5D27FE56442DCB812065A /* CMake Rules */,
+				93D75475C23D4C1187AD3271 /* /Users/keelia/Documents/GitHub/eos/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		E8E1432E19E843DF932ACC46 /* render */ = {
+			isa = PBXGroup;
+			children = (
+				083026DDFF324A5C9D41A6D5 /* detail */,
+				58B49D5F69834DA5AFEB1D5C /* /Users/keelia/Documents/GitHub/eos/include/eos/render/normals.hpp */,
+				A99C7C185BEA44E3A5FDEED5 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/transforms.hpp */,
+				F1B95BC29E6F4108B65FE2B4 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/ray_triangle_intersect.hpp */,
+				AC245F55BCCB4F46B6E4376C /* /Users/keelia/Documents/GitHub/eos/include/eos/render/draw_utils.hpp */,
+				2CC1E03608DE41A493A3A256 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/render.hpp */,
+				E32FF98C8C5F4B3584791A63 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/render_affine.hpp */,
+				835ED4AA6D024148AC741782 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/texture_extraction.hpp */,
+				37A81B49A5EF44A9A053CEF2 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/SoftwareRenderer.hpp */,
+				DDA13DACC61B4BFFAD4F9CC4 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/VertexShader.hpp */,
+				E0BB2D07D857463FBF46A148 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/Rasterizer.hpp */,
+				B704AB6F51F94118B7A578B4 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/FragmentShader.hpp */,
+				91AD5A8A2AE743B9BA85FE71 /* /Users/keelia/Documents/GitHub/eos/include/eos/render/Texture.hpp */,
+			);
+			name = render;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E096D1268804F5E89648DE2 /* fit-model-multi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF25E69702E645E283C44233 /* Build configuration list for PBXNativeTarget "fit-model-multi" */;
+			buildPhases = (
+				F1B7FF09F3D541CAA7D50399 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D4F0E83044442DBA2E89B54 /* PBXTargetDependency */,
+			);
+			name = "fit-model-multi";
+			productName = "fit-model-multi";
+			productReference = B5357C16070143C881EA879B /* fit-model-multi */;
+			productType = "com.apple.product-type.tool";
+		};
+		739C5DCB57EA42919F024EA0 /* fit-model-simple */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D6A6157F631401A9D0B07A1 /* Build configuration list for PBXNativeTarget "fit-model-simple" */;
+			buildPhases = (
+				9F54DDBB78E5443FADEF7375 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D03D095656A4E6A8507120B /* PBXTargetDependency */,
+			);
+			name = "fit-model-simple";
+			productName = "fit-model-simple";
+			productReference = 4A80753297674E13A4235974 /* fit-model-simple */;
+			productType = "com.apple.product-type.tool";
+		};
+		8D94589A331847809C502B86 /* generate-obj */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 536CE444FA1C45FABE5CC3C1 /* Build configuration list for PBXNativeTarget "generate-obj" */;
+			buildPhases = (
+				FECCB437F3AD4BE38CBA181F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D4059155C7646E8A46AF230 /* PBXTargetDependency */,
+			);
+			name = "generate-obj";
+			productName = "generate-obj";
+			productReference = EE0F852273E54060A2E79668 /* generate-obj */;
+			productType = "com.apple.product-type.tool";
+		};
+		A80A2B7FBCA446FD953D5199 /* fit-model */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D983F31327FA466F8AE4B475 /* Build configuration list for PBXNativeTarget "fit-model" */;
+			buildPhases = (
+				CBF10A23458546EABA684372 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05BAA41102404B8AAE853F8A /* PBXTargetDependency */,
+			);
+			name = "fit-model";
+			productName = "fit-model";
+			productReference = D17CB8A08E494CC88E60279B /* fit-model */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2775FA8F138B4F9BAFD35D5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1130;
+			};
+			buildConfigurationList = 136078C3554B4D61AAC8A745 /* Build configuration list for PBXProject "eos" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				F669C9AC61C54A65AF6E044D /* Debug */,
+				639C8697103244258182F48F /* Release */,
+				074B3732E865475AB44B95F1 /* MinSizeRel */,
+				4DEEFDF6F4E84DC282310FB0 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = CB4CFEFA545547D3992500A0;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				1EB9A3BBC25B4781A0EE6B86 /* ALL_BUILD */,
+				2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */,
+				DD06382C5CC94D0B8B05C920 /* eos-headers */,
+				A80A2B7FBCA446FD953D5199 /* fit-model */,
+				1E096D1268804F5E89648DE2 /* fit-model-multi */,
+				739C5DCB57EA42919F024EA0 /* fit-model-simple */,
+				8D94589A331847809C502B86 /* generate-obj */,
+				8FAE62EF76DD401CBF83D749 /* install */,
+				AE3FDDA764B7401CB765D03A /* package */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		392962F1F44C4232800B6DA8 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/keelia/Documents/GitHub/eos/build -f /Users/keelia/Documents/GitHub/eos/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		596BA5C54076497F8BB76618 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/keelia/Documents/GitHub/eos/build -f /Users/keelia/Documents/GitHub/eos/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		5F3EFD0AA38E42989B4B22BC = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		8277975E70F041F18F17C147 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		9B78A0A0088D497EB5C7844D /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/keelia/Documents/GitHub/eos/build -f /Users/keelia/Documents/GitHub/eos/build/CMakeScripts/package_postBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		C14E8885D79A454180F44C69 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/keelia/Documents/GitHub/eos/build -f /Users/keelia/Documents/GitHub/eos/build/CMakeScripts/install_postBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		C3FA7E41FE9A4D98B7A7825D = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		CCE5CD5CF4B84C9ABA383AD1 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		FCBF58C60A894AE29A9980B6 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F54DDBB78E5443FADEF7375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17DBEF6C02C84774A2456619 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-simple.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF10A23458546EABA684372 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38F5FCC72B8F4BC9ACD11C11 /* /Users/keelia/Documents/GitHub/eos/examples/fit-model.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B7FF09F3D541CAA7D50399 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6499F949241640219F39EC8B /* /Users/keelia/Documents/GitHub/eos/examples/fit-model-multi.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FECCB437F3AD4BE38CBA181F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F234F8A2A09443D19D6C4B8E /* /Users/keelia/Documents/GitHub/eos/examples/generate-obj.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05BAA41102404B8AAE853F8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */;
+			targetProxy = 857B96DA6D314C0ABDD2D920 /* PBXContainerItemProxy */;
+		};
+		16877195AA7641B89FA149DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EB9A3BBC25B4781A0EE6B86 /* ALL_BUILD */;
+			targetProxy = DFC70F4582DE4693A4CE9725 /* PBXContainerItemProxy */;
+		};
+		265662D84A4A4BEB8D0AABD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EB9A3BBC25B4781A0EE6B86 /* ALL_BUILD */;
+			targetProxy = 9FDB9500D325498ABBD197AE /* PBXContainerItemProxy */;
+		};
+		3D4059155C7646E8A46AF230 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */;
+			targetProxy = CA181092C3A941BB819AF520 /* PBXContainerItemProxy */;
+		};
+		5D03D095656A4E6A8507120B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */;
+			targetProxy = B60AA1AA202B4CE99C7115D9 /* PBXContainerItemProxy */;
+		};
+		5EB029F0EE044E08A5FCF817 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */;
+			targetProxy = 4FBB608567F548FFAF48636E /* PBXContainerItemProxy */;
+		};
+		8966EC3C615F4C5A914958BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E096D1268804F5E89648DE2 /* fit-model-multi */;
+			targetProxy = 66CD4953A9124979A8CC408A /* PBXContainerItemProxy */;
+		};
+		92B1E56FC4074353A0B805FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 739C5DCB57EA42919F024EA0 /* fit-model-simple */;
+			targetProxy = C809253DBD754AC08CE25244 /* PBXContainerItemProxy */;
+		};
+		9D4F0E83044442DBA2E89B54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */;
+			targetProxy = 464516BD115C4446B4290FA2 /* PBXContainerItemProxy */;
+		};
+		B3E7E7A32E764BF193B3EEB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBE2EBF0C5D4E3F9D6DF4CA /* ZERO_CHECK */;
+			targetProxy = 8FCBEA5E03CB4788AA60E422 /* PBXContainerItemProxy */;
+		};
+		BF13B575A6394353A1956518 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A80A2B7FBCA446FD953D5199 /* fit-model */;
+			targetProxy = C592F2345AB343128D89F311 /* PBXContainerItemProxy */;
+		};
+		E3105471DC564DC29747A15C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D94589A331847809C502B86 /* generate-obj */;
+			targetProxy = 3DB3E5379C0F46CD878D0E12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B809B60B7C74D90A5146070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/build;
+			};
+			name = Release;
+		};
+		1DC19C7C405A4053BC81EDC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "eos-headers";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		1F818A76FEE64A698CB5A48E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		2117EE2B1E5041BC82875DCF /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-simple";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		23297853728D4C2D84394FAD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		274F127273574A32BA916304 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		29190832F3E344D68E42153E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/build;
+			};
+			name = MinSizeRel;
+		};
+		2F00A6ED55EF42D293A50FF2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-simple";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		34D2F87024714565A10FA57C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "eos-headers";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3E955E27C75F49B3963213E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		3F1A688CDAB543D2BE992BA6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4178CB78D86A46AA93B6D7D2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "generate-obj";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		44D7B1986A6548A391C33BEB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		47C799B837F244198DD201AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		521B8420B96C4F5D97934B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		52A29FCE7F1F4C9FAB24246F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "eos-headers";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		556D0D775FC84DE38A7D811F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-multi";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		56B523108FE24AE48ECBBBB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		6E443B1CAE2C4D7BA7038312 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "generate-obj";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		6EC4631489394FC48C436A8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		7004DAD6E4D6485F8FDA14A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-multi";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7754ABE21C94416681835E2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "generate-obj";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7CCBDB83F3D24F449C8634F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7D5AD2DDB1714AE1BB893729 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		892C46D5D52E41C78FFC8EAE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-multi";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		910C04C8B7DE4C39813C8840 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		9A06E34B07AA44489602B953 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "eos-headers";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		9A260ECE43F34DBB953F5DC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-simple";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		A30E09440D4246CEB407DEC7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B35E0DF9F2004E73B9D92350 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-multi";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B820000646BE4143B8A150E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/build;
+			};
+			name = Debug;
+		};
+		CC47A1A0D14B4B5EB142DADE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "generate-obj";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		CE1AA4C8029A4053846AD64D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D23DE860AF02406C93591E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		E1AD744DEBE746EC95807501 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		E50C75C3D4FB4D48A69FB54B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		E6E6F8925B5D4F77A988E32D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model-simple";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		EA347A0F538F4E6B86560029 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		F6AD9FDEBA5048CBB12F24EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",BOOST_SYSTEM_DYN_LINK,BOOST_ALL_NO_LIB,BOOST_FILESYSTEM_DYN_LINK,BOOST_PROGRAM_OPTIONS_DYN_LINK);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/keelia/Documents/GitHub/eos/include,/Users/keelia/Documents/GitHub/eos/3rdparty/cereal/include,/Users/keelia/Documents/GitHub/eos/3rdparty/eigen,/Users/keelia/Documents/GitHub/eos/3rdparty/glm,/Users/keelia/Documents/GitHub/eos/3rdparty/nanoflann/include,"/Users/keelia/Documents/GitHub/eos/3rdparty/eigen3-nnls/src",/Users/keelia/Documents/GitHub/eos/3rdparty/toml11);
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names   /usr/local/lib/libopencv_imgcodecs.4.2.0.dylib /usr/local/lib/libboost_system.dylib /usr/local/lib/libboost_filesystem.dylib /usr/local/lib/libboost_program_options.dylib /usr/local/lib/libopencv_imgproc.4.2.0.dylib /usr/local/lib/libopencv_core.4.2.0.dylib ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "fit-model";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build/examples;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/Cellar/opencv/4.2.0_1/include/opencv4,/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		FBB5DC2E821C4E2B8920CCE9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/keelia/Documents/GitHub/eos/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		136078C3554B4D61AAC8A745 /* Build configuration list for PBXProject "eos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B820000646BE4143B8A150E4 /* Debug */,
+				1B809B60B7C74D90A5146070 /* Release */,
+				29190832F3E344D68E42153E /* MinSizeRel */,
+				23297853728D4C2D84394FAD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		36E451F2826C4EA39462517E /* Build configuration list for PBXAggregateTarget "eos-headers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DC19C7C405A4053BC81EDC8 /* Debug */,
+				52A29FCE7F1F4C9FAB24246F /* Release */,
+				9A06E34B07AA44489602B953 /* MinSizeRel */,
+				34D2F87024714565A10FA57C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3D6A6157F631401A9D0B07A1 /* Build configuration list for PBXNativeTarget "fit-model-simple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A260ECE43F34DBB953F5DC9 /* Debug */,
+				E6E6F8925B5D4F77A988E32D /* Release */,
+				2117EE2B1E5041BC82875DCF /* MinSizeRel */,
+				2F00A6ED55EF42D293A50FF2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		536CE444FA1C45FABE5CC3C1 /* Build configuration list for PBXNativeTarget "generate-obj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7754ABE21C94416681835E2A /* Debug */,
+				6E443B1CAE2C4D7BA7038312 /* Release */,
+				CC47A1A0D14B4B5EB142DADE /* MinSizeRel */,
+				4178CB78D86A46AA93B6D7D2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		72319AF2AC6D4F89A609663D /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B523108FE24AE48ECBBBB4 /* Debug */,
+				D23DE860AF02406C93591E45 /* Release */,
+				910C04C8B7DE4C39813C8840 /* MinSizeRel */,
+				E50C75C3D4FB4D48A69FB54B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B06F639469EE48FA81FEEB36 /* Build configuration list for PBXAggregateTarget "package" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CCBDB83F3D24F449C8634F9 /* Debug */,
+				E1AD744DEBE746EC95807501 /* Release */,
+				FBB5DC2E821C4E2B8920CCE9 /* MinSizeRel */,
+				44D7B1986A6548A391C33BEB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B95064A6E48D49B8B1B18323 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F818A76FEE64A698CB5A48E /* Debug */,
+				47C799B837F244198DD201AD /* Release */,
+				EA347A0F538F4E6B86560029 /* MinSizeRel */,
+				274F127273574A32BA916304 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D983F31327FA466F8AE4B475 /* Build configuration list for PBXNativeTarget "fit-model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E955E27C75F49B3963213E9 /* Debug */,
+				F6AD9FDEBA5048CBB12F24EA /* Release */,
+				3F1A688CDAB543D2BE992BA6 /* MinSizeRel */,
+				CE1AA4C8029A4053846AD64D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DA52954874624A8A9295651C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				521B8420B96C4F5D97934B92 /* Debug */,
+				6EC4631489394FC48C436A8F /* Release */,
+				7D5AD2DDB1714AE1BB893729 /* MinSizeRel */,
+				A30E09440D4246CEB407DEC7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EF25E69702E645E283C44233 /* Build configuration list for PBXNativeTarget "fit-model-multi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7004DAD6E4D6485F8FDA14A4 /* Debug */,
+				556D0D775FC84DE38A7D811F /* Release */,
+				892C46D5D52E41C78FFC8EAE /* MinSizeRel */,
+				B35E0DF9F2004E73B9D92350 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2775FA8F138B4F9BAFD35D5A /* Project object */;
+}
