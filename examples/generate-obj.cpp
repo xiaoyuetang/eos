@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
         // clang-format off
         desc.add_options()
             ("help", "produce help message")
-            ("model", po::value<string>(&model_file)->required(), "an eos .bin Morphable Model file")
+            ("model", po::value<string>(&model_file)->default_value("../../../share/sfm_shape_3448.bin"), "an eos .bin Morphable Model file")
             ("shape-coeffs", po::value<vector<float>>(&shape_coefficients)->multitoken(),
                 "optional parameter list of shape coefficients. All not specified will be set to zero. E.g.: "
                 "'--shape-coeffs 0.0 1.5'. If omitted, the mean is used.")

@@ -74,9 +74,9 @@ int main(int argc, char* argv[])
             ("help,h", "display the help message")
             ("model,m", po::value<string>(&modelfile)->required()->default_value("../share/sfm_shape_3448.bin"),
                 "a Morphable Model stored as cereal BinaryArchive")
-            ("image,i", po::value<string>(&imagefile)->required()->default_value("data/image_0010.png"),
+            ("image,i", po::value<string>(&imagefile)->required()->default_value("../examples/data/image_0010.png"),
                 "an input image")
-            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("data/image_0010.pts"),
+            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("../examples/data/image_0010.pts"),
                 "2D landmarks for the image, in ibug .pts format")
             ("mapping,p", po::value<string>(&mappingsfile)->required()->default_value("../share/ibug_to_sfm.txt"),
                 "landmark identifier to model vertex number mapping")

@@ -1,5 +1,4 @@
 import eos
-import trimesh
 import numpy as np
 
 def main():
@@ -32,8 +31,7 @@ def main():
     # isomap = eos.render.extract_texture(mesh, pose, image)
 
     # help(eos)
-    fitted_mesh = eos.render.render(pose)
-    print (fitted_mesh)
+    print (pose)
 
 
 def read_pts(filename):

@@ -73,19 +73,19 @@ int main(int argc, char* argv[])
         // clang-format off
         desc.add_options()
             ("help,h", "display the help message")
-            ("model,m", po::value<string>(&modelfile)->required()->default_value("../share/sfm_shape_3448.bin"),
+            ("model,m", po::value<string>(&modelfile)->required()->default_value("../../../share/sfm_shape_3448.bin"),
                 "a Morphable Model stored as cereal BinaryArchive")
-            ("image,i", po::value<string>(&imagefile)->required()->default_value("data/image_0010.png"),
+            ("image,i", po::value<string>(&imagefile)->required()->default_value("../../../examples/data/image_0010.png"),
                 "an input image")
-            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("data/image_0010.pts"),
+            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("../../../examples/data/image_0010.pts"),
                 "2D landmarks for the image, in ibug .pts format")
-            ("mapping,p", po::value<string>(&mappingsfile)->required()->default_value("../share/ibug_to_sfm.txt"),
+            ("mapping,p", po::value<string>(&mappingsfile)->required()->default_value("../../../share/ibug_to_sfm.txt"),
                 "landmark identifier to model vertex number mapping")
-            ("model-contour,c", po::value<string>(&contourfile)->required()->default_value("../share/sfm_model_contours.json"),
+            ("model-contour,c", po::value<string>(&contourfile)->required()->default_value("../../../share/sfm_model_contours.json"),
                 "file with model contour indices")
-            ("edge-topology,e", po::value<string>(&edgetopologyfile)->required()->default_value("../share/sfm_3448_edge_topology.json"),
+            ("edge-topology,e", po::value<string>(&edgetopologyfile)->required()->default_value("../../../share/sfm_3448_edge_topology.json"),
                 "file with model's precomputed edge topology")
-            ("blendshapes,b", po::value<string>(&blendshapesfile)->required()->default_value("../share/expression_blendshapes_3448.bin"),
+            ("blendshapes,b", po::value<string>(&blendshapesfile)->required()->default_value("../../../share/expression_blendshapes_3448.bin"),
                 "file with blendshapes")
             ("output,o", po::value<string>(&outputbasename)->required()->default_value("out"),
                 "basename for the output rendering and obj files");
