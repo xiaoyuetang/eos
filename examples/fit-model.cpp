@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
                 "file with model's precomputed edge topology")
             ("blendshapes,b", po::value<string>(&blendshapesfile)->required()->default_value("../../../share/expression_blendshapes_3448.bin"),
                 "file with blendshapes")
-            ("output,o", po::value<string>(&outputbasename)->required()->default_value("out"),
+            ("output,o", po::value<string>(&outputbasename)->required()->default_value("../../../share/out"),
                 "basename for the output rendering and obj files");
         // clang-format on
         po::variables_map vm;
