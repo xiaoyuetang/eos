@@ -193,7 +193,7 @@ inline auto get_corresponding_pointset(const T& landmarks, const core::LandmarkM
         { // no mapping defined for the current landmark
             continue;
         }
-        int vertex_idx = std::stoi(converted_name.get());
+        int vertex_idx = std::stoi(converted_name.value());
         auto vertex = morphable_model.get_shape_model().get_mean_at_point(vertex_idx);
         model_points.emplace_back(Vector4f(vertex.x(), vertex.y(), vertex.z(), 1.0f));
         vertex_indices.emplace_back(vertex_idx);

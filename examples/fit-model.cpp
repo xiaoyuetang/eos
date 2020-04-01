@@ -17,6 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include "eos/core/Image.hpp"
 #include "eos/core/image/opencv_interop.hpp"
 #include "eos/core/Landmark.hpp"
@@ -39,9 +40,10 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
-#include <iostream>
+#include <tuple>
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace eos;
 namespace po = boost::program_options;
@@ -49,10 +51,19 @@ namespace fs = boost::filesystem;
 using eos::core::Landmark;
 using eos::core::LandmarkCollection;
 using cv::Mat;
+using cv::Size;
+using cv::Scalar;
 using std::cout;
 using std::endl;
 using std::string;
+using Eigen::Vector2f;
+using Eigen::Vector4f;
 using std::vector;
+using std::tuple;
+using std::get;
+using std::nullopt;
+using Eigen::VectorXf;
+using Eigen::MatrixXf;
 
 /**
  * This app demonstrates estimation of the camera and fitting of the shape
@@ -75,16 +86,8 @@ int main(int argc, char* argv[])
             ("help,h", "display the help message")
             ("model,m", po::value<string>(&modelfile)->required()->default_value("../../../share/sfm_shape_3448.bin"),
                 "a Morphable Model stored as cereal BinaryArchive")
-            ("image,i", po::value<string>(&imagefile)->required()->default_value("../../../examples/data/image_0010.png"),
+            ("image,i", po::value<string>(&imagefile)->required()->default_value("../../../examples/data/blank.png"),
                 "an input image")
-            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("../../../examples/data/image_0010.pts"),
-                "2D landmarks for the image, in ibug .pts format")
-            ("mapping,p", po::value<string>(&mappingsfile)->required()->default_value("../../../share/ibug_to_sfm.txt"),
-                "landmark identifier to model vertex number mapping")
-            ("model-contour,c", po::value<string>(&contourfile)->required()->default_value("../../../share/sfm_model_contours.json"),
-                "file with model contour indices")
-            ("edge-topology,e", po::value<string>(&edgetopologyfile)->required()->default_value("../../../share/sfm_3448_edge_topology.json"),
-                "file with model's precomputed edge topology")
             ("blendshapes,b", po::value<string>(&blendshapesfile)->required()->default_value("../../../share/expression_blendshapes_3448.bin"),
                 "file with blendshapes")
             ("output,o", po::value<string>(&outputbasename)->required()->default_value("../../../share/out"),
@@ -92,94 +95,98 @@ int main(int argc, char* argv[])
         // clang-format on
         po::variables_map vm;
         po::store(po::command_line_parser(argc, argv).options(desc).run(), vm);
-        if (vm.count("help"))
-        {
+        if (vm.count("help")) {
             cout << "Usage: fit-model [options]" << endl;
             cout << desc;
             return EXIT_SUCCESS;
         }
         po::notify(vm);
-    } catch (const po::error& e)
-    {
+    } catch (const po::error& e) {
         cout << "Error while parsing command-line arguments: " << e.what() << endl;
         cout << "Use --help to display a list of options." << endl;
         return EXIT_FAILURE;
     }
+    
+    // Load the data
+    // Mat image = cv::imread(imagefile);
+    // Mat outimg = image.clone();
+    
+    int image_width = 711;
+    int image_height = 639;
+    
+    Mat image(Size(image_width, image_height), CV_8UC3, Scalar(0));
+    Mat outimg = image.clone();
+    
+    vector<float> pca_shape_coefficients = {-0.0379799,0.559008,0.602648,-0.152,0.21687,-0.759703,0.769095,
+        -0.968627,-2.42433,-0.354739,2.29922,-0.591134,-0.574637,-1.82709,
+        0.0282491,-1.06557,-2.25787,1.1133,-1.61851,-0.981673,-0.691006,
+        0.670574,-0.441432,1.33156,-1.00528,0.798634,-0.0573042,-0.59704,
+        0.825366,1.14771,0.380775,1.63973,-0.0666317,0.822097,-0.735586,
+        0.106438,-0.628944,0.396325,1.21352,1.47966,-0.397452,0.0053387,
+        0.846061,0.457958,0.43957,0.597302,0.123962,-0.0737794,-0.215417,
+        0.891043,0.119919,0.773746,-0.0905794,0.212756,0.10064,0.225995,
+        -0.0527107,0.186097,1.1114,0.307628,0.302768,0.0233245,0.0557738};
 
-    // Load the image, landmarks, LandmarkMapper and the Morphable Model:
-    Mat image = cv::imread(imagefile);
-    LandmarkCollection<Eigen::Vector2f> landmarks;
-    try
-    {
-        landmarks = core::read_pts_landmarks(landmarksfile);
-    } catch (const std::runtime_error& e)
-    {
-        cout << "Error reading the landmarks: " << e.what() << endl;
-        return EXIT_FAILURE;
-    }
-    morphablemodel::MorphableModel morphable_model;
-    try
-    {
-        morphable_model = morphablemodel::load_model(modelfile);
-    } catch (const std::runtime_error& e)
-    {
+    vector<float> blendshape_coefficients = {0.912141,0,0,0,0.558107,0.371095};
+    
+    float r_x = -3.29358*0.01745;   // pitch
+    float r_y = 60.869*0.01745;     // yaw
+    float r_z = -49.4783*0.01745;   // roll
+    
+    const auto rot_mtx_x = glm::rotate(glm::mat4(1.0f), r_x, glm::vec3{1.0f, 0.0f, 0.0f});
+    const auto rot_mtx_y = glm::rotate(glm::mat4(1.0f), r_y, glm::vec3{0.0f, 1.0f, 0.0f});
+    const auto rot_mtx_z = glm::rotate(glm::mat4(1.0f), r_z, glm::vec3{0.0f, 0.0f, 1.0f});
+    glm::mat3x3 rotation_matrix = rot_mtx_z * rot_mtx_x * rot_mtx_y;
+    
+    float tx = 170.454;
+    float ty = 97.5417;
+    float scale = 2.30562;
+
+    fitting::ScaledOrthoProjectionParameters current_pose = {rotation_matrix, tx, ty, scale};
+
+    morphablemodel::MorphableModel model;
+    try {
+        model = morphablemodel::load_model(modelfile);
+    } catch (const std::runtime_error& e) {
         cout << "Error loading the Morphable Model: " << e.what() << endl;
         return EXIT_FAILURE;
     }
-    // The landmark mapper is used to map 2D landmark points (e.g. from the ibug scheme) to vertex ids:
-    core::LandmarkMapper landmark_mapper;
-    try
-    {
-        landmark_mapper = core::LandmarkMapper(mappingsfile);
-    } catch (const std::exception& e)
-    {
-        cout << "Error loading the landmark mappings: " << e.what() << endl;
-        return EXIT_FAILURE;
-    }
-
+    
     // The expression blendshapes:
     const vector<morphablemodel::Blendshape> blendshapes = morphablemodel::load_blendshapes(blendshapesfile);
 
-    morphablemodel::MorphableModel morphable_model_with_expressions(
-        morphable_model.get_shape_model(), blendshapes, morphable_model.get_color_model(), cpp17::nullopt,
-        morphable_model.get_texture_coordinates());
-
-    // These two are used to fit the front-facing contour to the ibug contour landmarks:
-    const fitting::ModelContour model_contour =
-        contourfile.empty() ? fitting::ModelContour() : fitting::ModelContour::load(contourfile);
-    const fitting::ContourLandmarks ibug_contour = fitting::ContourLandmarks::load(mappingsfile);
-
-    // The edge topology is used to speed up computation of the occluding face contour fitting:
-    const morphablemodel::EdgeTopology edge_topology = morphablemodel::load_edge_topology(edgetopologyfile);
-
-    // Draw the loaded landmarks:
-    Mat outimg = image.clone();
-    for (auto&& lm : landmarks)
-    {
-        cv::rectangle(outimg, cv::Point2f(lm.coordinates[0] - 2.0f, lm.coordinates[1] - 2.0f),
-                      cv::Point2f(lm.coordinates[0] + 2.0f, lm.coordinates[1] + 2.0f), {255, 0, 0});
-    }
-
-    // Fit the model, get back a mesh and the pose:
-    core::Mesh mesh;
-    fitting::RenderingParameters rendering_params;
-    std::tie(mesh, rendering_params) = fitting::fit_shape_and_pose(
-        morphable_model_with_expressions, landmarks, landmark_mapper, image.cols, image.rows, edge_topology,
-        ibug_contour, model_contour, 5, cpp17::nullopt, 30.0f);
-
-    // The 3D head pose can be recovered as follows:
-    float yaw_angle = glm::degrees(glm::yaw(rendering_params.get_rotation()));
-    // and similarly for pitch and roll.
+    morphablemodel::MorphableModel morphable_model(
+        model.get_shape_model(), blendshapes, model.get_color_model(), cpp17::nullopt,
+        model.get_texture_coordinates());
+    
+    // Get affine_camera_matrix from pose data
+    fitting::RenderingParameters rendering_params(current_pose, image_width, image_height);
+    
+    const Eigen::Matrix<float, 3, 4> affine_camera_matrix =
+    fitting::get_3x4_affine_camera_matrix(rendering_params, image_width, image_height);
+    
+    VectorXf pca_shape = morphable_model.get_shape_model().draw_sample(pca_shape_coefficients);
+    assert(morphable_model.has_separate_expression_model());
+    
+    const MatrixXf blendshapes_as_basis = morphablemodel::to_matrix(blendshapes);
+    
+    VectorXf combined_shape = pca_shape +
+    blendshapes_as_basis * Eigen::Map<const VectorXf>(blendshape_coefficients.data(),
+                                                      blendshape_coefficients.size());
+    
+    auto mesh = morphablemodel::sample_to_mesh(
+        combined_shape, morphable_model.get_color_model().get_mean(),
+        morphable_model.get_shape_model().get_triangle_list(),
+        morphable_model.get_color_model().get_triangle_list(), morphable_model.get_texture_coordinates(),
+        morphable_model.get_texture_triangle_indices());
 
     // Extract the texture from the image using given mesh and camera parameters:
-    const Eigen::Matrix<float, 3, 4> affine_from_ortho =
-        fitting::get_3x4_affine_camera_matrix(rendering_params, image.cols, image.rows);
     const core::Image4u isomap =
-        render::extract_texture(mesh, affine_from_ortho, core::from_mat(image), true);
+        render::extract_texture(mesh, affine_camera_matrix, core::from_mat(image), true);
 
     // Draw the fitted mesh as wireframe, and save the image:
     render::draw_wireframe(outimg, mesh, rendering_params.get_modelview(), rendering_params.get_projection(),
-                           fitting::get_opencv_viewport(image.cols, image.rows));
+                           fitting::get_opencv_viewport(image_width, image_height));
     fs::path outputfile = outputbasename + ".png";
     cv::imwrite(outputfile.string(), outimg);
 

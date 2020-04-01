@@ -1,4 +1,4 @@
-/*
+ /*
  * eos - A 3D Morphable Model fitting library written in modern C++11/14.
  *
  * File: include/eos/fitting/orthographic_camera_estimation_linear.hpp
