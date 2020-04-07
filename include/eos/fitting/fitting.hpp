@@ -319,7 +319,7 @@ fit_expressions(const morphablemodel::ExpressionModel& expression_model, const E
  * @return The fitted model shape instance and the final pose.
  * @throws std::runtime_error if an error occurs, for example more shape coefficients are given than the model contains
  */
-inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
+inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model,
     const core::LandmarkCollection<Eigen::Vector2f>& landmarks, const core::LandmarkMapper& landmark_mapper,
     int image_width, int image_height, const morphablemodel::EdgeTopology& edge_topology,
@@ -533,7 +533,7 @@ inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
     }
 
     fitted_image_points = image_points;
-    return {current_mesh, rendering_params}; // I think we could also work with a VectorXf face_instance in
+    return {current_mesh, rendering_params, pca_shape_coefficients, expression_coefficients, current_pose}; // I think we could also work with a VectorXf face_instance in
                                              // this function instead of a Mesh, but it would convolute the
                                              // code more (i.e. more complicated to access vertices).
 };
@@ -573,7 +573,7 @@ inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
  * @param[in] lambda_expressions Regularisation parameter of the expression fitting. Only used for expression-PCA fitting.
  * @return The fitted model shape instance and the final pose.
  */
-inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
+inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model,
     const core::LandmarkCollection<Eigen::Vector2f>& landmarks, const core::LandmarkMapper& landmark_mapper,
     int image_width, int image_height, const morphablemodel::EdgeTopology& edge_topology,
@@ -633,7 +633,7 @@ inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
  * @param[out] fitted_image_points Debug parameter: Returns all the 2D points that have been used for the fitting.
  * @return The fitted model shape instance and the final pose.
  */
-inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
+inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model, const std::vector<Eigen::Vector2f>& image_points,
     const std::vector<int>& vertex_indices, int image_width, int image_height, int num_iterations,
     cpp17::optional<int> num_shape_coefficients_to_fit, float lambda_identity,
@@ -762,7 +762,7 @@ inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
     }
 
     fitted_image_points = image_points;
-    return {current_mesh, rendering_params}; // I think we could also work with a VectorXf face_instance in
+    return {current_mesh, rendering_params, pca_shape_coefficients, expression_coefficients, current_pose}; // I think we could also work with a VectorXf face_instance in
                                              // this function instead of a Mesh, but it would convolute the
                                              // code more (i.e. more complicated to access vertices).
 };
@@ -785,7 +785,7 @@ inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
  * @param[in] lambda_expressions Regularisation parameter of the expression fitting. Only used for expression-PCA fitting.
  * @return The fitted model shape instance and the final pose.
  */
-inline std::pair<core::Mesh, fitting::RenderingParameters> fit_shape_and_pose(
+inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model, const std::vector<Eigen::Vector2f>& image_points,
     const std::vector<int>& vertex_indices, int image_width, int image_height, int num_iterations,
     cpp17::optional<int> num_shape_coefficients_to_fit, float lambda_identity,
