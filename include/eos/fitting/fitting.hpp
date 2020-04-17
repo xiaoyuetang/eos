@@ -319,7 +319,7 @@ fit_expressions(const morphablemodel::ExpressionModel& expression_model, const E
  * @return The fitted model shape instance and the final pose.
  * @throws std::runtime_error if an error occurs, for example more shape coefficients are given than the model contains
  */
-inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
+inline std::tuple<float, float, float, float, float, float, std::vector<float>, std::vector<float>> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model,
     const core::LandmarkCollection<Eigen::Vector2f>& landmarks, const core::LandmarkMapper& landmark_mapper,
     int image_width, int image_height, const morphablemodel::EdgeTopology& edge_topology,
@@ -533,9 +533,20 @@ inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, 
     }
 
     fitted_image_points = image_points;
-    return {current_mesh, rendering_params, pca_shape_coefficients, expression_coefficients, current_pose}; // I think we could also work with a VectorXf face_instance in
+
+    // The 3D head pose can be recovered as follows:
+    float yaw = glm::degrees(glm::yaw(rendering_params.get_rotation()));
+    float roll = glm::degrees(glm::roll(rendering_params.get_rotation()));
+    float pitch = glm::degrees(glm::pitch(rendering_params.get_rotation()));
+    
+    float tx = current_pose.tx;
+    float ty = current_pose.ty;
+    float scale = current_pose.s;
+
+    return {tx, ty, scale, yaw, roll, pitch, pca_shape_coefficients, expression_coefficients}; // I think we could also work with a VectorXf face_instance in
                                              // this function instead of a Mesh, but it would convolute the
                                              // code more (i.e. more complicated to access vertices).
+
 };
 
 /**
@@ -573,7 +584,7 @@ inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, 
  * @param[in] lambda_expressions Regularisation parameter of the expression fitting. Only used for expression-PCA fitting.
  * @return The fitted model shape instance and the final pose.
  */
-inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
+inline std::tuple<float, float, float, float, float, float, std::vector<float>, std::vector<float>> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model,
     const core::LandmarkCollection<Eigen::Vector2f>& landmarks, const core::LandmarkMapper& landmark_mapper,
     int image_width, int image_height, const morphablemodel::EdgeTopology& edge_topology,
@@ -633,7 +644,7 @@ inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, 
  * @param[out] fitted_image_points Debug parameter: Returns all the 2D points that have been used for the fitting.
  * @return The fitted model shape instance and the final pose.
  */
-inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
+inline std::tuple<float, float, float, float, float, float, std::vector<float>, std::vector<float>> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model, const std::vector<Eigen::Vector2f>& image_points,
     const std::vector<int>& vertex_indices, int image_width, int image_height, int num_iterations,
     cpp17::optional<int> num_shape_coefficients_to_fit, float lambda_identity,
@@ -762,7 +773,17 @@ inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, 
     }
 
     fitted_image_points = image_points;
-    return {current_mesh, rendering_params, pca_shape_coefficients, expression_coefficients, current_pose}; // I think we could also work with a VectorXf face_instance in
+
+        // The 3D head pose can be recovered as follows:
+    float yaw = glm::degrees(glm::yaw(rendering_params.get_rotation()));
+    float roll = glm::degrees(glm::roll(rendering_params.get_rotation()));
+    float pitch = glm::degrees(glm::pitch(rendering_params.get_rotation()));
+    
+    float tx = current_pose.tx;
+    float ty = current_pose.ty;
+    float scale = current_pose.s;
+    
+    return {tx, ty, scale, yaw, roll, pitch, pca_shape_coefficients, expression_coefficients}; // I think we could also work with a VectorXf face_instance in
                                              // this function instead of a Mesh, but it would convolute the
                                              // code more (i.e. more complicated to access vertices).
 };
@@ -785,7 +806,7 @@ inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, 
  * @param[in] lambda_expressions Regularisation parameter of the expression fitting. Only used for expression-PCA fitting.
  * @return The fitted model shape instance and the final pose.
  */
-inline std::tuple<core::Mesh, fitting::RenderingParameters, std::vector<float>, std::vector<float>, fitting::ScaledOrthoProjectionParameters> fit_shape_and_pose(
+inline std::tuple<float, float, float, float, float, float, std::vector<float>, std::vector<float>> fit_shape_and_pose(
     const morphablemodel::MorphableModel& morphable_model, const std::vector<Eigen::Vector2f>& image_points,
     const std::vector<int>& vertex_indices, int image_width, int image_height, int num_iterations,
     cpp17::optional<int> num_shape_coefficients_to_fit, float lambda_identity,

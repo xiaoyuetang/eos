@@ -1,7 +1,7 @@
 /*
  * eos - A 3D Morphable Model fitting library written in modern C++11/14.
  *
- * File: examples/fit-model.cpp
+ * File: examples/task2.cpp
  *
  * Copyright 2016 Patrik Huber
  *
@@ -41,6 +41,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
@@ -55,6 +56,27 @@ using std::endl;
 using std::string;
 using std::vector;
 
+struct OutputData
+{
+    float tx, ty, scale;
+    float yaw, roll, pitch;
+    vector<float> pca_shape_coefficients;
+    vector<float> expression_coefficients;
+    int image_width, image_height;
+};
+
+void write(const std::string& file_name, OutputData& data)
+{
+  std::ofstream out(file_name.c_str());
+  out.write(reinterpret_cast<char*>(&data), sizeof(OutputData));
+}
+
+void read(const std::string& file_name, OutputData& data)
+{
+  std::ifstream in(file_name.c_str());
+  in.read(reinterpret_cast<char*>(&data), sizeof(OutputData));
+}
+
 /*
  * This app demonstrates estimation of the camera and fitting of the shape
  * model of a 3D Morphable Model from an ibug LFPW image with its landmarks.
@@ -66,7 +88,7 @@ using std::vector;
  */
 
 int main(int argc, char* argv[]) {
-    string modelfile, isomapfile, imagefile, landmarksfile, mappingsfile, contourfile, edgetopologyfile, blendshapesfile, outputbasename;
+    string modelfile, isomapfile, imagefile, landmarksfile, mappingsfile, contourfile, edgetopologyfile, blendshapesfile, outputfile;
     try {
         po::options_description desc("Allowed options");
         // clang-format off
@@ -74,9 +96,9 @@ int main(int argc, char* argv[]) {
             ("help,h", "display the help message")
             ("model,m", po::value<string>(&modelfile)->required()->default_value("../../../share/sfm_shape_3448.bin"),
                 "a Morphable Model stored as cereal BinaryArchive")
-            ("image,i", po::value<string>(&imagefile)->required()->default_value("../../../examples/data/image_050_01.jpg"),
+            ("image,i", po::value<string>(&imagefile)->required()->default_value("../../../examples/data/image_0010.png"),
                 "an input image")
-            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("../../../examples/data/image_050_01.pts"),
+            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("../../../examples/data/image_0010.pts"),
                 "2D landmarks for the image, in ibug .pts format")
             ("mapping,p", po::value<string>(&mappingsfile)->required()->default_value("../../../share/ibug_to_sfm.txt"),
                 "landmark identifier to model vertex number mapping")
@@ -86,8 +108,8 @@ int main(int argc, char* argv[]) {
                 "file with model's precomputed edge topology")
             ("blendshapes,b", po::value<string>(&blendshapesfile)->required()->default_value("../../../share/expression_blendshapes_3448.bin"),
                 "file with blendshapes")
-            ("output,o", po::value<string>(&outputbasename)->required()->default_value("../../../share/out"),
-                "basename for the output rendering and obj files");
+            ("outputfile,o", po::value<string>(&outputfile)->required()->default_value("../../../share/out"),
+                "basename for the output files");
         // clang-format on
         po::variables_map vm;
         po::store(po::command_line_parser(argc, argv).options(desc).run(), vm);
@@ -151,37 +173,23 @@ int main(int argc, char* argv[]) {
     }
 
     // Fit the model, get back a mesh and the pose:
-    auto [mesh, rendering_params, pca_shape_coefficients, expression_coefficients, current_pose] = fitting::fit_shape_and_pose(
+
+    auto [tx, ty, scale, yaw, roll, pitch, pca_shape_coefficients, expression_coefficients] = fitting::fit_shape_and_pose(
         morphable_model_with_expressions, landmarks, landmark_mapper, image.cols, image.rows, edge_topology,
         ibug_contour, model_contour, 5, cpp17::nullopt, 30.0f);
 
-    // The 3D head pose can be recovered as follows:
-    float yaw_angle = glm::degrees(glm::yaw(rendering_params.get_rotation()));
-    // and similarly for pitch and roll.
-
-    // Extract the texture from the image using given mesh and camera parameters:
-    const Eigen::Matrix<float, 3, 4> affine_from_ortho =
-        fitting::get_3x4_affine_camera_matrix(rendering_params, image.cols, image.rows);
-    const core::Image4u isomap =
-        render::extract_texture(mesh, affine_from_ortho, core::from_mat(image), true);
-
-    // Draw the fitted mesh as wireframe, and save the image:
-    render::draw_wireframe(outimg, mesh, rendering_params.get_modelview(), rendering_params.get_projection(),
-                           fitting::get_opencv_viewport(image.cols, image.rows));
-    fs::path outputfile = outputbasename + ".png";
-    cv::imwrite(outputfile.string(), outimg);
-
-    // Save the mesh as textured obj:
-    outputfile.replace_extension(".obj");
-    core::write_textured_obj(mesh, outputfile.string());
-
-    // And save the isomap:
-    outputfile.replace_extension(".isomap.png");
-    cv::imwrite(outputfile.string(), core::to_mat(isomap));
-
-    cout << "Finished fitting and wrote result mesh and isomap to files with basename "
-         << outputfile.stem().stem() << "." << endl;
-
+//    // The 3D head pose can be recovered as follows:
+//    float yaw_angle = glm::degrees(glm::yaw(rendering_params.get_rotation()));
+//    float roll_angle = glm::degrees(glm::roll(rendering_params.get_rotation()));
+//    float pitch_angle = glm::degrees(glm::pitch(rendering_params.get_rotation()));
+//
+//    float tx = current_pose.tx;
+//    float ty = current_pose.ty;
+//    float scale = current_pose.s;
+    
+    OutputData outputdata = {tx, ty, scale, yaw, roll, pitch, pca_shape_coefficients, expression_coefficients, image.cols, image.rows};
+    
+    write("../../../share/out.dat", outputdata);
+    
     return EXIT_SUCCESS;
 }
-
