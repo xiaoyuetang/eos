@@ -1,7 +1,7 @@
 /*
  * eos - A 3D Morphable Model fitting library written in modern C++11/14.
  *
- * File: examples/task2.cpp
+ * File: examples/task1.cpp
  *
  * Copyright 2016 Patrik Huber
  *
@@ -17,7 +17,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #include "eos/core/Image.hpp"
 #include "eos/core/image/opencv_interop.hpp"
 #include "eos/core/Landmark.hpp"
@@ -33,163 +32,104 @@
 
 #include "Eigen/Core"
 
-#include "boost/filesystem.hpp"
-#include "boost/program_options.hpp"
-
-#include "opencv2/core/core.hpp"
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/opencv.hpp"
 
 #include <iostream>
-#include <fstream>
 #include <string>
 #include <vector>
 
 using namespace eos;
-namespace po = boost::program_options;
-namespace fs = boost::filesystem;
 using eos::core::Landmark;
 using eos::core::LandmarkCollection;
 using cv::Mat;
 using std::cout;
 using std::endl;
-using std::string;
+//using std::string;
 using std::vector;
 
-struct OutputData
+
+int main(int argc, char* argv[])
 {
-    float tx, ty, scale;
-    float yaw, roll, pitch;
-    vector<float> pca_shape_coefficients;
-    vector<float> expression_coefficients;
-    int image_width, image_height;
-};
-
-void write(const std::string& file_name, OutputData& data)
-{
-  std::ofstream out(file_name.c_str());
-  out.write(reinterpret_cast<char*>(&data), sizeof(OutputData));
-}
-
-void read(const std::string& file_name, OutputData& data)
-{
-  std::ifstream in(file_name.c_str());
-  in.read(reinterpret_cast<char*>(&data), sizeof(OutputData));
-}
-
-/*
- * This app demonstrates estimation of the camera and fitting of the shape
- * model of a 3D Morphable Model from an ibug LFPW image with its landmarks.
- * In addition to fit-model-simple, this example uses blendshapes, contour-
- * fitting, and can iterate the fitting.
- *
- * 68 ibug landmarks are loaded from the .pts file and converted
- * to vertex indices using the LandmarkMapper.
- */
-
-int main(int argc, char* argv[]) {
-    string modelfile, isomapfile, imagefile, landmarksfile, mappingsfile, contourfile, edgetopologyfile, blendshapesfile, outputfile;
-    try {
-        po::options_description desc("Allowed options");
-        // clang-format off
-        desc.add_options()
-            ("help,h", "display the help message")
-            ("model,m", po::value<string>(&modelfile)->required()->default_value("../../../share/sfm_shape_3448.bin"),
-                "a Morphable Model stored as cereal BinaryArchive")
-            ("image,i", po::value<string>(&imagefile)->required()->default_value("../../../examples/data/image_0010.png"),
-                "an input image")
-            ("landmarks,l", po::value<string>(&landmarksfile)->required()->default_value("../../../examples/data/image_0010.pts"),
-                "2D landmarks for the image, in ibug .pts format")
-            ("mapping,p", po::value<string>(&mappingsfile)->required()->default_value("../../../share/ibug_to_sfm.txt"),
-                "landmark identifier to model vertex number mapping")
-            ("model-contour,c", po::value<string>(&contourfile)->required()->default_value("../../../share/sfm_model_contours.json"),
-                "file with model contour indices")
-            ("edge-topology,e", po::value<string>(&edgetopologyfile)->required()->default_value("../../../share/sfm_3448_edge_topology.json"),
-                "file with model's precomputed edge topology")
-            ("blendshapes,b", po::value<string>(&blendshapesfile)->required()->default_value("../../../share/expression_blendshapes_3448.bin"),
-                "file with blendshapes")
-            ("outputfile,o", po::value<string>(&outputfile)->required()->default_value("../../../share/out"),
-                "basename for the output files");
-        // clang-format on
-        po::variables_map vm;
-        po::store(po::command_line_parser(argc, argv).options(desc).run(), vm);
-        if (vm.count("help")) {
-            cout << "Usage: fit-model [options]" << endl;
-            cout << desc;
-            return EXIT_SUCCESS;
-        }
-        po::notify(vm);
-    } catch (const po::error& e) {
-        cout << "Error while parsing command-line arguments: " << e.what() << endl;
-        cout << "Use --help to display a list of options." << endl;
-        return EXIT_FAILURE;
+    std::string modelfile, blendshapesfile, outputbasename;
+    
+    {
+        modelfile = std::string("../../../share/sfm_shape_3448.bin");
+        blendshapesfile = std::string("../../../share/expression_blendshapes_3448.bin");
+        outputbasename = std::string("../../../share/out");
     }
+    
+    ////////////////////////////////////////////////////////// data ///////////////////////////////////////////////////////////////////
+    vector<float> pca_shape_coefficients = {-2.338609218597412, -1.2515982389450073, 0.1755952388048172, 1.033585786819458, -2.713702440261841, 1.216418981552124, 0.913641631603241, -0.3053925037384033, 0.7316317558288574, -1.1612648963928223, -1.2642675638198853, -0.3228277564048767, 0.6099429726600647, -0.6541866064071655, 0.40998780727386475, -0.13651646673679352, -1.7231858968734741, -2.158867835998535, 0.5417099595069885, 0.9988842010498047, 0.5702272653579712, 2.1864211559295654, 0.5520375370979309, 1.177590250968933, 0.775390625, -1.0329573154449463, 0.9921132922172546, -0.6110327243804932, -0.7987896203994751, 1.3898028135299683, -1.849816918373108, 0.2090795338153839, -0.07065387815237045, -0.4063229560852051, -0.17549015581607819, -0.6966468095779419, -0.3037428557872772, -0.16357864439487457, 0.0004648771428037435, 0.05237540230154991, 0.15677115321159363, -0.8662497997283936, 0.10988561809062958, -0.34472766518592834, -0.6893541812896729, -0.3189617097377777, 0.892291784286499, -0.7957141995429993, 0.5989113450050354, -0.23037709295749664, -0.3147507905960083, 0.10487079620361328, -0.09231892973184586, 0.045785605907440186, -0.5401266813278198, -0.5128871202468872, 0.34904050827026367, -0.03161684423685074, -0.07072675228118896, -0.27109166979789734, -0.5444401502609253, -0.2180466204881668, 0.12787102162837982};
 
-    // Load the image, landmarks, LandmarkMapper and the Morphable Model:
-    Mat image = cv::imread(imagefile);
-    LandmarkCollection<Eigen::Vector2f> landmarks;
-    try {
-        landmarks = core::read_pts_landmarks(landmarksfile);
-    } catch (const std::runtime_error& e) {
-        cout << "Error reading the landmarks: " << e.what() << endl;
-        return EXIT_FAILURE;
-    }
-    morphablemodel::MorphableModel morphable_model;
-    try {
-        morphable_model = morphablemodel::load_model(modelfile);
-    } catch (const std::runtime_error& e) {
+    vector<float> blendshape_coefficients = {0.0, 0.0, 0.549663245677948, 0.19894109666347504, 0.0, 0.6341454386711121};
+    
+    float yaw = -19.548917770385742;     // yaw
+    float roll = -0.662237823009491;   // roll
+    float pitch = -11.274361610412598;   // pitch
+    
+    float tx = 85.71695709228516;
+    float ty = 100.56600952148438;
+    float scale = 1.271665334701538;
+    ////////////////////////////////////////////////////////// end of data ///////////////////////////////////////////////////////////////////
+
+    int image_width = 240;
+    int image_height = 240;
+    
+    /////////////////////////////////////////////////////////// loading model ///////////////////////////////////////////////////////////////
+    morphablemodel::MorphableModel model;
+    try
+    {
+        model = morphablemodel::load_model(modelfile);
+    } catch (const std::runtime_error& e)
+    {
         cout << "Error loading the Morphable Model: " << e.what() << endl;
         return EXIT_FAILURE;
     }
-    // The landmark mapper is used to map 2D landmark points (e.g. from the ibug scheme) to vertex ids:
-    core::LandmarkMapper landmark_mapper;
-    try {
-        landmark_mapper = core::LandmarkMapper(mappingsfile);
-    } catch (const std::exception& e) {
-        cout << "Error loading the landmark mappings: " << e.what() << endl;
-        return EXIT_FAILURE;
-    }
-
+    
     // The expression blendshapes:
     const vector<morphablemodel::Blendshape> blendshapes = morphablemodel::load_blendshapes(blendshapesfile);
 
-    morphablemodel::MorphableModel morphable_model_with_expressions(
-        morphable_model.get_shape_model(), blendshapes, morphable_model.get_color_model(), cpp17::nullopt,
-        morphable_model.get_texture_coordinates());
-
-    // These two are used to fit the front-facing contour to the ibug contour landmarks:
-    const fitting::ModelContour model_contour =
-        contourfile.empty() ? fitting::ModelContour() : fitting::ModelContour::load(contourfile);
-    const fitting::ContourLandmarks ibug_contour = fitting::ContourLandmarks::load(mappingsfile);
-
-    // The edge topology is used to speed up computation of the occluding face contour fitting:
-    const morphablemodel::EdgeTopology edge_topology = morphablemodel::load_edge_topology(edgetopologyfile);
-
-    // Draw the loaded landmarks:
-    Mat outimg = image.clone();
-    for (auto&& lm : landmarks) {
-        cv::rectangle(outimg, cv::Point2f(lm.coordinates[0] - 2.0f, lm.coordinates[1] - 2.0f),
-                      cv::Point2f(lm.coordinates[0] + 2.0f, lm.coordinates[1] + 2.0f), {255, 0, 0});
-    }
-
-    // Fit the model, get back a mesh and the pose:
-
-    auto [tx, ty, scale, yaw, roll, pitch, pca_shape_coefficients, expression_coefficients] = fitting::fit_shape_and_pose(
-        morphable_model_with_expressions, landmarks, landmark_mapper, image.cols, image.rows, edge_topology,
-        ibug_contour, model_contour, 5, cpp17::nullopt, 30.0f);
-
-//    // The 3D head pose can be recovered as follows:
-//    float yaw_angle = glm::degrees(glm::yaw(rendering_params.get_rotation()));
-//    float roll_angle = glm::degrees(glm::roll(rendering_params.get_rotation()));
-//    float pitch_angle = glm::degrees(glm::pitch(rendering_params.get_rotation()));
-//
-//    float tx = current_pose.tx;
-//    float ty = current_pose.ty;
-//    float scale = current_pose.s;
+    morphablemodel::MorphableModel morphable_model(
+        model.get_shape_model(), blendshapes, model.get_color_model(), cpp17::nullopt,
+        model.get_texture_coordinates());
+    /////////////////////////////////////////////////////////// end of  loading model //////////////////////////////////////////////////////////////////////
+  
+    /////////////////////////////////////////////////////////  construct  a mesh and the pose:///////////////////////////////////////////////////////
+    const auto rot_mtx_x = glm::rotate(glm::mat4(1.0f), pitch/180*3.14159f, glm::vec3{1.0f, 0.0f, 0.0f});
+    const auto rot_mtx_y = glm::rotate(glm::mat4(1.0f), yaw/180*3.14159f, glm::vec3{0.0f, 1.0f, 0.0f});
+    const auto rot_mtx_z = glm::rotate(glm::mat4(1.0f), roll/180*3.14159f, glm::vec3{0.0f, 0.0f, 1.0f});
     
-    OutputData outputdata = {tx, ty, scale, yaw, roll, pitch, pca_shape_coefficients, expression_coefficients, image.cols, image.rows};
+    const auto rotation_matrix = rot_mtx_z * rot_mtx_x * rot_mtx_y;
+    fitting::ScaledOrthoProjectionParameters current_pose = {rotation_matrix, tx, ty, scale};
+    fitting::RenderingParameters rendering_params = fitting::RenderingParameters(current_pose, image_width, image_height);
     
-    write("../../../share/out.dat", outputdata);
+    auto current_pca_shape = morphable_model.get_shape_model().draw_sample(pca_shape_coefficients);
     
+    assert(morphable_model.has_separate_expression_model());
+
+    auto current_combined_shape =
+        current_pca_shape +
+        draw_sample(morphable_model.get_expression_model().value(), blendshape_coefficients);
+    auto current_mesh = morphablemodel::sample_to_mesh(
+        current_combined_shape, morphable_model.get_color_model().get_mean(),
+        morphable_model.get_shape_model().get_triangle_list(),
+        morphable_model.get_color_model().get_triangle_list(), morphable_model.get_texture_coordinates(),
+        morphable_model.get_texture_triangle_indices());
+    /////////////////////////////////////////////////////////  end of construct  a mesh and the pose:///////////////////////////////////////////////////////
+    
+    ////////////////////////////////////////////////// draw /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    cv::Mat outimg(image_height,image_width,CV_8UC3);
+    outimg = 0;
+    // Draw the fitted mesh as wireframe, and save the image:
+    render::draw_wireframe(outimg, current_mesh, rendering_params.get_modelview(), rendering_params.get_projection(),
+                           fitting::get_opencv_viewport(image_width, image_height));
+    
+    cv::imwrite(outputbasename + ".png", outimg);
+    ////////////////////////////////////////////////// end of draw ///////////////////////////////////////////////////
+
+    // Save the mesh as textured obj:
+    core::write_textured_obj(current_mesh, outputbasename + ".obj");
+
     return EXIT_SUCCESS;
 }
+
