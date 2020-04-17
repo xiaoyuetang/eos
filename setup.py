@@ -72,7 +72,7 @@ setup(
     description='Python bindings for eos - A lightweight 3D Morphable Face Model fitting library in modern C++11/14',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/patrikhuber/eos',
+    url='https://github.com/xiaoyuetang/eos',
     license='Apache-2.0',
     ext_modules=[CMakeExtension('eos')],
     cmdclass=dict(build_ext=CMakeBuild),
