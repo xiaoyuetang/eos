@@ -321,7 +321,8 @@ PYBIND11_MODULE(eos, eos_module)
                 contour_landmarks, model_contour, num_iterations, num_shape_coefficients_to_fit,
                 lambda_identity, num_expression_coefficients_to_fit, lambda_expressions, pca_coeffs,
                 blendshape_coeffs, fitted_image_points);
-            return std::make_tuple(result.first, result.second, pca_coeffs, blendshape_coeffs);
+            // return std::make_tuple(result.first, result.second, pca_coeffs, blendshape_coeffs);
+            return result;
         },
         "Fit the pose (camera), shape model, and expression blendshapes to landmarks, in an iterative way. "
         "Returns a tuple (mesh, rendering_parameters, shape_coefficients, blendshape_coefficients).",
