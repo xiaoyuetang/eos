@@ -994,6 +994,7 @@ include/eos/cpp17/detail/akrzemi1_optional.hpp
 include/eos/cpp17/detail/akrzemi1_optional_serialization.hpp
 include/eos/cpp17/detail/mpark_variant.hpp
 include/eos/cpp17/detail/mpark_variant_serialization.hpp
+include/eos/fitting/.DS_Store
 include/eos/fitting/FittingResult.hpp
 include/eos/fitting/RenderingParameters.hpp
 include/eos/fitting/affine_camera_estimation.hpp

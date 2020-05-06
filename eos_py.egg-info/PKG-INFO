@@ -1,4 +1,4 @@
-Metadata-Version: 1.0
+Metadata-Version: 2.1
 Name: eos-py
 Version: 1.1.2
 Summary: Python bindings for eos - A lightweight 3D Morphable Face Model fitting library in modern C++11/14
@@ -6,7 +6,6 @@ Home-page: https://github.com/xiaoyuetang/eos
 Author: Patrik Huber
 Author-email: patrikhuber@gmail.com
 License: Apache-2.0
-Description-Content-Type: text/markdown
 Description: # eos: A lightweight header-only 3D Morphable Face Model fitting library in modern C++11/14.
         [![Latest release](http://img.shields.io/github/release/patrikhuber/eos.svg?style=flat-square)][release]
         [![Linux build status of master branch](https://img.shields.io/travis/patrikhuber/eos/master.svg?style=flat-square&label=Linux/macOS%3A%20build)][travis]
@@ -147,3 +146,4 @@ Description: # eos: A lightweight header-only 3D Morphable Face Model fitting li
         If you use this code in your own work, please cite the following paper: _A Multiresolution 3D Morphable Face Model and Fitting Framework_, P. Huber, G. Hu, R. Tena, P. Mortazavian, W. Koppen, W. Christmas, M. Rätsch, J. Kittler, International Conference on Computer Vision Theory and Applications (VISAPP) 2016, Rome, Italy [[PDF]](http://www.patrikhuber.ch/files/3DMM_Framework_VISAPP_2016.pdf).
         
 Platform: UNKNOWN
+Description-Content-Type: text/markdown

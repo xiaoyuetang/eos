@@ -497,9 +497,11 @@ python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o
  ../../include/eos/render/detail/Vertex.hpp
  ../../include/eos/render/detail/plane.hpp
  ../../include/eos/render/detail/render_affine_detail.hpp
+ ../../include/eos/render/detail/render_detail.hpp
  ../../include/eos/render/detail/render_detail_utils.hpp
  ../../include/eos/render/detail/texture_extraction_detail.hpp
  ../../include/eos/render/detail/texturing.hpp
+ ../../include/eos/render/draw_utils.hpp
  ../../include/eos/render/normals.hpp
  ../../include/eos/render/ray_triangle_intersect.hpp
  ../../include/eos/render/render_affine.hpp

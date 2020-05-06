@@ -35,7 +35,7 @@
 #include "eos/morphablemodel/io/cvssp.hpp"
 #include "eos/pca/pca.hpp"
 #include "eos/render/texture_extraction.hpp"
-#include "eos/render/draw_utils.hpp"
+// #include "eos/render/draw_utils.hpp"
 
 #include "pybind11/pybind11.h"
 #include "pybind11/eigen.h"
@@ -349,9 +349,9 @@ PYBIND11_MODULE(eos, eos_module)
                       "Extracts the texture of the face from the given image and stores it as isomap (a rectangular texture map).",
                       py::arg("mesh"), py::arg("rendering_params"), py::arg("image"), py::arg("compute_view_angle") = false, py::arg("isomap_resolution") = 512);
     
-    render_module.def("draw_wireframe",
-                      (cv::Mat image, const core::Mesh& mesh, glm::mat4x4 modelview,
-                           glm::mat4x4 projection, glm::vec4 viewport, cv::Scalar color),
-                      "Draw wireframe.",
-                      py::arg("image"), py::arg("mesh"), py::arg("modelview"), py::arg("projection"), py::arg("viewport"), py::arg("image"), py::arg("color") = cv::Scalar(0, 255, 0, 255);
+    // render_module.def("draw_wireframe",
+    //                   (cv::Mat image, const core::Mesh& mesh, glm::mat4x4 modelview,
+    //                        glm::mat4x4 projection, glm::vec4 viewport, cv::Scalar color),
+    //                   "Draw wireframe.",
+    //                   py::arg("image"), py::arg("mesh"), py::arg("modelview"), py::arg("projection"), py::arg("viewport"), py::arg("image"), py::arg("color") = cv::Scalar(0, 255, 0, 255);
 };
