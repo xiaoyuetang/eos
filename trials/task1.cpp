@@ -107,6 +107,7 @@ int main(int argc, char* argv[])
     const auto rot_mtx_y = glm::rotate(glm::mat4(1.0f), yaw/180*3.14159f, glm::vec3{0.0f, 1.0f, 0.0f});
     const auto rot_mtx_z = glm::rotate(glm::mat4(1.0f), roll/180*3.14159f, glm::vec3{0.0f, 0.0f, 1.0f});
     const auto rotation_matrix = rot_mtx_z * rot_mtx_x * rot_mtx_y;
+    
     fitting::ScaledOrthoProjectionParameters current_pose = {rotation_matrix, tx, ty, scale};
     fitting::RenderingParameters rendering_params = fitting::RenderingParameters(current_pose, image_width, image_height);
     
