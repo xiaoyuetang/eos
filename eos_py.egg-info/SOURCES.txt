@@ -761,6 +761,7 @@ setup.py
 3rdparty/nanoflann/tests/CMakeLists.txt
 3rdparty/nanoflann/tests/gtest-1.7.0/CMakeLists.txt
 3rdparty/nanoflann/tests/gtest-1.7.0/cmake/internal_utils.cmake
+3rdparty/pybind11/.DS_Store
 3rdparty/pybind11/.appveyor.yml
 3rdparty/pybind11/.git
 3rdparty/pybind11/.gitignore
@@ -816,6 +817,7 @@ setup.py
 3rdparty/pybind11/docs/advanced/pycpp/numpy.rst
 3rdparty/pybind11/docs/advanced/pycpp/object.rst
 3rdparty/pybind11/docs/advanced/pycpp/utilities.rst
+3rdparty/pybind11/include/.DS_Store
 3rdparty/pybind11/include/pybind11/attr.h
 3rdparty/pybind11/include/pybind11/buffer_info.h
 3rdparty/pybind11/include/pybind11/cast.h

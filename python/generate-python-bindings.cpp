@@ -251,6 +251,7 @@ PYBIND11_MODULE(eos, eos_module)
     py::module fitting_module = eos_module.def_submodule("fitting", "Pose and shape fitting of a 3D Morphable Model.");
 
     py::class_<fitting::ScaledOrthoProjectionParameters>(fitting_module, "ScaledOrthoProjectionParameters", "Parameters of an estimated scaled orthographic projection.")
+        .def(py::init<Eigen::Matrix3f R, float s, float tx, float ty>(), "Create a ScaledOrthoProjectionParameters")
         .def_property_readonly("R",
              [](const fitting::ScaledOrthoProjectionParameters& p) {
             Eigen::Matrix3f R; // we could probably use Eigen::Map

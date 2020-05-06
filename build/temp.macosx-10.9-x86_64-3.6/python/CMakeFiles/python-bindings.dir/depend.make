@@ -496,11 +496,9 @@ python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../incl
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/detail/Vertex.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/detail/plane.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/detail/render_affine_detail.hpp
-python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/detail/render_detail.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/detail/render_detail_utils.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/detail/texture_extraction_detail.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/detail/texturing.hpp
-python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/draw_utils.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/normals.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/ray_triangle_intersect.hpp
 python/CMakeFiles/python-bindings.dir/generate-python-bindings.cpp.o: ../../include/eos/render/render_affine.hpp
