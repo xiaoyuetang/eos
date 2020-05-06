@@ -1021,6 +1021,7 @@ include/eos/morphablemodel/io/cvssp.hpp
 include/eos/morphablemodel/io/eigen_cerealisation.hpp
 include/eos/morphablemodel/io/mat_cerealisation.hpp
 include/eos/pca/pca.hpp
+include/eos/render/.DS_Store
 include/eos/render/FragmentShader.hpp
 include/eos/render/Rasterizer.hpp
 include/eos/render/SoftwareRenderer.hpp
